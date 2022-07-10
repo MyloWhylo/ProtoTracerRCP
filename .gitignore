@@ -53,5 +53,5 @@ Mkfile.old
 dkms.conf
 
 # Pi Pico
-*/build/*
-*/.vscode/*
+build/*/*/*
+.vscode/*
