@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/mylowhylo/PiPico/pico/displayDriver/build/src/CMakeFiles/PioasmBuild"
+		},
+		{
+			"file" : "/home/mylowhylo/PiPico/pico/displayDriver/build/src/CMakeFiles/PioasmBuild.rule"
+		},
+		{
+			"file" : "/home/mylowhylo/PiPico/pico/displayDriver/build/src/CMakeFiles/PioasmBuild-complete.rule"
+		},
+		{
+			"file" : "/home/mylowhylo/PiPico/pico/displayDriver/build/src/pioasm/src/PioasmBuild-stamp/PioasmBuild-install.rule"
+		},
+		{
+			"file" : "/home/mylowhylo/PiPico/pico/displayDriver/build/src/pioasm/src/PioasmBuild-stamp/PioasmBuild-mkdir.rule"
+		},
+		{
+			"file" : "/home/mylowhylo/PiPico/pico/displayDriver/build/src/pioasm/src/PioasmBuild-stamp/PioasmBuild-download.rule"
+		},
+		{
+			"file" : "/home/mylowhylo/PiPico/pico/displayDriver/build/src/pioasm/src/PioasmBuild-stamp/PioasmBuild-update.rule"
+		},
+		{
+			"file" : "/home/mylowhylo/PiPico/pico/displayDriver/build/src/pioasm/src/PioasmBuild-stamp/PioasmBuild-patch.rule"
+		},
+		{
+			"file" : "/home/mylowhylo/PiPico/pico/displayDriver/build/src/pioasm/src/PioasmBuild-stamp/PioasmBuild-configure.rule"
+		},
+		{
+			"file" : "/home/mylowhylo/PiPico/pico/displayDriver/build/src/pioasm/src/PioasmBuild-stamp/PioasmBuild-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"PioasmBuild"
+		],
+		"name" : "PioasmBuild"
+	}
+}

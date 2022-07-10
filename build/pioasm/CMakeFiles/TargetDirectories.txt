@@ -1,0 +1,3 @@
+/home/mylowhylo/PiPico/pico/displayDriver/build/pioasm/CMakeFiles/rebuild_cache.dir
+/home/mylowhylo/PiPico/pico/displayDriver/build/pioasm/CMakeFiles/edit_cache.dir
+/home/mylowhylo/PiPico/pico/displayDriver/build/pioasm/CMakeFiles/pioasm.dir
