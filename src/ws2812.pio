@@ -29,7 +29,6 @@ do_zero:
 #include "hardware/clocks.h"
 
 static inline void myloWSInit(PIO pio, uint sm, uint offset, float freq, uint pin) {
-
     pio_gpio_init(pio, pin);
     pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, true);
 
