@@ -18,28 +18,29 @@ int main() {
 	gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
 #endif
 
-	printf("ProtoTracer Reality Coprocessor initializing");
+	printf("ProtoTracer Reality Coprocessor initializing...");
 	stdio_init_all();
 
-	for (int ii = 0; ii < 30; ii++) {
-		printf(".");
-		gpio_put(PICO_DEFAULT_LED_PIN, 1);
-		sleep_ms(125);
-		gpio_put(PICO_DEFAULT_LED_PIN, 0);
-		sleep_ms(125);
-	}
+	// for (int ii = 0; ii < 30; ii++) {
+	// 	printf(".");
+	// 	gpio_put(PICO_DEFAULT_LED_PIN, 1);
+	// 	sleep_ms(125);
+	// 	gpio_put(PICO_DEFAULT_LED_PIN, 0);
+	// 	sleep_ms(125);
+	// }
 
-	sleep_ms(750);
+	// sleep_ms(750);
 	printf("\n");
 
 	printf("Matrix Initialization: ");
-	PixelMatrix myloMatrix(MATRIX_WIDTH, MATRIX_HEIGHT, true);  // = new PixelMatrix(MATRIX_WIDTH, MATRIX_HEIGHT, true);
+	PixelMatrix myloMatrix(MATRIX_WIDTH, MATRIX_HEIGHT, true, true);  // = new PixelMatrix(MATRIX_WIDTH, MATRIX_HEIGHT, true);
 	myloMatrix.init();
+	myloMatrix.setBrightness(64);
 	printf("OK!\n\n");
 
 	printf("Initializing SPI...\n");
 	ProtoSPI protoTransfer(NUM_PIXELS, &myloMatrix);
-	protoTransfer.init(20000000);
+	protoTransfer.init(1000000);
 	printf("SPI Initialized!\n\n");
 
 	printf("Emotion Engine to Reality Coprocessor DMA Bridge established, beginning display.\n");

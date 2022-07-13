@@ -53,5 +53,8 @@ Mkfile.old
 dkms.conf
 
 # Pi Pico
-build/*/*/*
+build/*
 .vscode/*
+
+# testing
+badapple.mp4
