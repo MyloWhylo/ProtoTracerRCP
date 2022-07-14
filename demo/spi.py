@@ -16,7 +16,7 @@ class RCP:
     def initializeRCP(self):
         print("Initializing communications...")
         # Resets the RCP, putting it in a known state
-        GPIO.setmode(GPIO.BOARD)
+        GPIO.setmode(GPIO.BCM)
         GPIO.setup(25, GPIO.OUT)
 
         GPIO.output(25, GPIO.LOW)
@@ -69,7 +69,7 @@ class RCP:
 
     def sendData(self, frame):
         # delay for 500uSec to allow DMA to finish before CS goes high
-        self.spi.xfer2(frame.tobytes(), 4000000, 500, 8)
+        self.spi.xfer2(frame.tobytes(), 22000000, 0, 8)
 
 
 if __name__ == "__main__":

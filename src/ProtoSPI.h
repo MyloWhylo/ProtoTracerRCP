@@ -21,6 +21,7 @@ static void configureSPI(uint baudrate);
 static void gpioCallback(uint gpio, uint32_t events);
 
 static void gpioCallback(uint gpio, uint32_t events) {
+    gpio_put(15, false);
     if (gpio != 17) return;
     gpio_acknowledge_irq(gpio, events);
 
@@ -38,6 +39,7 @@ static void gpioCallback(uint gpio, uint32_t events) {
     dma_channel_set_write_addr(rxChan, rxBuf, false);         // Set write address of RX DMA
     dma_start_channel_mask((1u << txChan) | (1u << rxChan));  // Start TX and RX DMAs simultaneously
     transferInProgress = true;
+    gpio_put(15, true);
 }
 
 static void configureSPI(uint baudrate) {
@@ -52,6 +54,7 @@ static void configureSPI(uint baudrate) {
 }
 
 static void spiTransferHandler() {
+    gpio_put(14, false);
     transferInProgress = false;
     dma_channel_acknowledge_irq0(rxChan);
 
@@ -68,6 +71,7 @@ static void spiTransferHandler() {
 
     // Display Framebuffer
     dispMatrix->display();
+    gpio_put(14, true);
 }
 
 void errorblink() {

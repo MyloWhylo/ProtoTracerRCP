@@ -3,7 +3,8 @@ import sys
 from spi import RCP
 from interval import PeriodicSleeper
 
-success, frame = None
+success = None
+frame = None
 
 
 def frameFunction():
@@ -23,9 +24,8 @@ if __name__ == "__main__":
 
     print("### ProtoTracer RCP Demo ###")
     for arg in argvIter:
-        match arg:
-            case '-i':
-                inputVideoFile = next(argvIter)
+        if arg == '-i':
+            inputVideoFile = next(argvIter)
 
     print("Initializing RCP... ", end="")
     sys.stdout.flush()
@@ -49,4 +49,4 @@ if __name__ == "__main__":
     print(f'New dimensions: {dim[0]}x{dim[1]}, starting at {leftBound}.')
     print("Starting video transfer.")
 
-    sleeper = PeriodicSleeper(frameFunction, 25)
+    sleeper = PeriodicSleeper(frameFunction, 120)

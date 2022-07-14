@@ -15,15 +15,20 @@ int main() {
 
 #ifndef PICO_DEFAULT_LED_PIN
 #warning ProtoTracer Reality Coprocessor requires the builtin LED for status.
-#else
-    gpio_init(PICO_DEFAULT_LED_PIN);
-    gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
 #endif
 
-    while (!tud_cdc_connected()) {  // Wait for USB to connect
-        sleep_ms(100);
-        gpio_xor_mask(PICO_DEFAULT_LED_PIN);  // hehe toggle
-    }
+    gpio_init(PICO_DEFAULT_LED_PIN);
+    gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
+
+    gpio_init(15);  // CS IRQ Pulse
+    gpio_set_dir(15, GPIO_OUT);
+
+    gpio_init(14);  // DMA IRQ Pulse
+    gpio_set_dir(14, GPIO_OUT);
+    // while (!tud_cdc_connected()) {  // Wait for USB to connect
+    //     sleep_ms(100);
+    //     gpio_xor_mask(PICO_DEFAULT_LED_PIN);  // hehe toggle
+    // }
 
     gpio_put(PICO_DEFAULT_LED_PIN, false);
     printf("ProtoTracer Reality Coprocessor initializing...\n");
